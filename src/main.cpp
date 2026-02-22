@@ -32,6 +32,8 @@ public:
         if (m_owner_id != std::this_thread::get_id())
         {
             std::cout << "Unlock failed... continue thread." << std::endl;
+            // Normal case when a not ownner thread is trying to release the lock
+            // cause a run exception.
             return; // Only the owner can unlock
         }
 
