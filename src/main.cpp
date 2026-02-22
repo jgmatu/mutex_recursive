@@ -66,8 +66,19 @@ void recursive_increment(int depth) {
     {
         recursive_increment(depth); // <--- RECURSIVE CALL
     }
-
-    shared_counter = 0;
+    if (shared_counter > 0)
+    {
+        if (shared_counter == depth)
+        {
+            std::cout << "OK!" << std::endl;
+            shared_counter = 0;
+        }
+        else
+        {
+            /* BAD PROTECTION */
+            throw;
+        }
+    }
     recursive_mutex.unlock();
 }
 
