@@ -1,0 +1,25 @@
+# Prerequisites
+*.d
+
+# Object files
+obj/
+*.o
+*.ko
+*.obj
+*.elf
+
+# Build directories
+build/
+bin/
+app/
+
+# CMake generated files (if you don't use a build folder)
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+Makefile
+install_manifest.txt
+
+# IDE Specific (VS Code)
+.vscode/
