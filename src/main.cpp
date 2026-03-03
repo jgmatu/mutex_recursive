@@ -49,7 +49,7 @@ public:
 
 private:
     std::binary_semaphore m_sem;
-    std::thread::id m_owner_id;
+    std::atomic<std::thread::id> m_owner_id{std::thread::id()};
     int m_lock_count;
 };
 
